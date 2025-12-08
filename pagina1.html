@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pepesa!!!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Parabéns a nós!!!! <span style="color:red;">❤ ❤ ❤ ❤</span>
+</h1>
+<p>Olá Coração!!!!</p>
+<p>Hoje é o nosso dia!!! <span style="color:red;">❤ ❤ ❤ ❤</span> </p>
+<p>2 anos de muito amor, muito carinho e de memórias e momentos inesquecíveis!!!</p>
+<p>Por isso resolvi fazer algo muito especial para celebrar este dia tão especial</p>
+<p>Clica no botão para começar!!!!</p>
+<nav>
+  <a href="pagina2.html"><button>Começar a Pepesa <span style="color:red;">❤ ❤ ❤ ❤</span> ▶</button></a>
+</nav>
+
+<body style="background: palevioletred;">
+
+
+  <div class="hearts"></div>
+
+  <script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+    
+    // posição horizontal aleatória
+    heart.style.left = Math.random() * 100 + "vw";
+    // duração aleatória da animação
+    heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+  
+    document.querySelector(".hearts").appendChild(heart);
+  
+    // remover depois de cair
+    setTimeout(() => {
+      heart.remove();
+    }, 8000);
+  }
+  
+  // cria um coração a cada 300ms
+  setInterval(createHeart, 300);
+  </script>
+  
+
+</body>
+</html>

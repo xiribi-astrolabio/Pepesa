@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página Especial</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #ffb6c1;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    color: #fff;
+  }
+
+/* Texto acima e abaixo */
+.texto {
+font-size: 1.8em;
+text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+margin: 10px 0;
+}
+
+/* Imagem central */
+.central-img {
+max-width: 200px; /* imagem menor */
+width: 40%;
+border-radius: 15px;
+box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+margin: 20px 0;
+}
+
+/* Corações animados */
+.heart {
+position: absolute;
+width: 20px;
+height: 20px;
+background: red;
+transform: rotate(-45deg);
+animation: float 5s infinite;
+opacity: 0.8;
+}
+
+.heart::before,
+.heart::after {
+content: '';
+position: absolute;
+width: 20px;
+height: 20px;
+background: red;
+border-radius: 50%;
+}
+
+.heart::before {
+top: -10px;
+left: 0;
+}
+
+.heart::after {
+top: 0;
+left: 10px;
+}
+
+@keyframes float {
+0% {
+transform: translateY(0) rotate(-45deg);
+opacity: 0.8;
+}
+100% {
+transform: translateY(-800px) rotate(-45deg);
+opacity: 0;
+}
+} </style>
+
+</head>
+<body>
+
+<!-- Texto em cima da imagem -->
+
+<div class="texto">Olá Bebé</div>
+<div class="texto">Algo muito especial aproxima-se!!!</div>
+
+<!-- Imagem central -->
+
+<img src="central.JPEG" alt="Imagem Central" class="central-img">
+
+<!-- Texto embaixo da imagem -->
+
+<div class="texto">Fica atenta!!!</div>
+<div class="texto">Brevemente...</div>
+
+<script>
+  // Criar corações animados
+  for(let i=0; i<50; i++){
+    let heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.animationDuration = 3 + Math.random() * 5 + 's';
+    let size = 10 + Math.random() * 30;
+    heart.style.width = size + 'px';
+    heart.style.height = size + 'px';
+    document.body.appendChild(heart);
+  }
+</script>
+
+</body>
+</html>
